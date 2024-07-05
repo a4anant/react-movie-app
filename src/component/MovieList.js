@@ -5,6 +5,9 @@ import Col from "react-bootstrap/Col";
 import Figure from "react-bootstrap/Figure";
 
 function MovieList(props) {
+
+  const FavouriteComponent = props.favouriteComponent;
+
   return (
     <>
       <Container className="fluid">
@@ -18,6 +21,12 @@ function MovieList(props) {
                   alt="171x180"
                   src={movie.Poster}
                 />
+                <Figure.Caption 
+                  className="figure-caption text-center position-relative"
+                  onClick={() => props.handleFavouriteClick(movie)}
+                  >
+                    <FavouriteComponent />
+                </Figure.Caption>
               </Figure>
             ))}
           </Col>
